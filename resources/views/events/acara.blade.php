@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail Event</title>
+    <link rel="stylesheet" href="{{ asset('css/Warna Acara.css') }}">
+</head>
+<body>
+
+    <h1>Master Event</h1>
+    
+    <p>Berikut adalah detail event pilihan untuk Anda.</p>
+    
+    <h2>Judul Event</h2>
+
+    <div>
+        <img src="{{ asset('images/gambar website.jpg') }}" width="200" alt="Sketsa Website" onerror="this.src='C:\\Users\\Sista\\Downloads\\gambar website.jpg'">
+    </div>
+
+    <p>Masterclass: Membangun Aplikasi</p>
+    
+    <h2>Kategori</h2>
+    <p>Teknologi</p>
+
+    <h2>Deskripsi Event</h2>
+    <p>Pelajari cara merancang arsitektur perangkat lunak modern dan mengintegrasikan kecerdasan buatan (AI) ke dalam aplikasi secara efisien.</p>
+    
+    <h2>Silabus</h2>
+    <p>1. Pengantar Arsitektur Modern<br>2. Integrasi Model AI<br>3. Studi Kasus & Sesi Tanya Jawab</p>
+
+    <h2>Durasi Sesi</h2>
+    <p>3 Jam (19.00 - 22.00 WIB)</p>
+
+    <div>
+        <button type="button">Pesan Tiket</button>
+    </div>
+
+    <p></p>
+
+    <!-- Navigasi Halaman -->
+    <a href="{{ route('events.index') }}">
+        <button type="button">Page 1</button>
+    </a>
+
+    <a href="{{ route('events.acara') }}">
+        <button type="button">Page 2</button>
+    </a>
+
+    <a href="{{ route('events.bisnis') }}">
+        <button type="button">Page 3</button>
+    </a>
+
+    <a href="{{ route('events.tampil') }}">
+        <button type="button">Page 4 (Data Database)</button>
+    </a>
+
+</body>
+</html>
