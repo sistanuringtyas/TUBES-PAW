@@ -4,16 +4,13 @@ include "koneksi.php";
 $pesan_sukses = "";
 $pesan_error = "";
 
-// Cek status dari redirect tampilandata.php
 if (isset($_GET['status']) && $_GET['status'] == 'sukses') {
     $pesan_sukses = "Data event berhasil disimpan ke database phpMyAdmin!";
 }
 
-// Cek apakah tabel 'events' ada di database, jika tidak gunakan 'tabel_event'
 $cek_events = mysqli_query($koneksi, "SHOW TABLES LIKE 'events'");
 $nama_tabel = ($cek_events && mysqli_num_rows($cek_events) > 0) ? 'events' : 'tabel_event';
 
-// Fitur Hapus data (jika diklik hapus)
 if (isset($_GET['hapus']) && is_numeric($_GET['hapus'])) {
     $id_hapus = $_GET['hapus'];
     $stmt = mysqli_prepare($koneksi, "DELETE FROM $nama_tabel WHERE id = ?");
@@ -176,7 +173,6 @@ $result = mysqli_query($koneksi, $query);
     </table>
   </section>
 
-  <!-- Navigasi Halaman -->
   <a href="Event.html">
       <button type="button">Page 1</button>
   </a>

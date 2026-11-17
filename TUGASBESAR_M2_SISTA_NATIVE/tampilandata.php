@@ -9,7 +9,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $durasi    = trim($_POST['durasi'] ?? $_POST['durasi_sesi'] ?? '');
 
     if (!empty($judul)) {
-        // Cek tabel yang ada di database (events atau tabel_event)
         $cek_events = mysqli_query($koneksi, "SHOW TABLES LIKE 'events'");
         if ($cek_events && mysqli_num_rows($cek_events) > 0) {
             $stmt = mysqli_prepare($koneksi, "INSERT INTO events (judul, kategori, deskripsi, silabus, durasi) VALUES (?, ?, ?, ?, ?)");
